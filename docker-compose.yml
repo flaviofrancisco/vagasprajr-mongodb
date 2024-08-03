@@ -1,0 +1,16 @@
+services:
+  mongodb:
+    image: mongodb:latest
+    container_name: db
+    build:
+      context: .
+      args:
+        MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+        MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}            
+    env_file:
+      - .env
+    volumes:
+      - ./db:/data/db # Replace with your volume mapping if needed
+      - ./backup:/backup # Replace with your volume mapping if needed
+    ports:
+      - "27017:27017" # Map host port 27017 to container port 27017

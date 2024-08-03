@@ -1,0 +1,5 @@
+.env
+backup/*
+restore_backup.sh
+*.mongodb.js
+db/*
