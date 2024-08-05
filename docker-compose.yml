@@ -5,10 +5,8 @@ services:
     build:
       context: .
       args:
-        MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
-        MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}            
-    env_file:
-      - .env
+        MONGO_INITDB_ROOT_USERNAME: admin
+        MONGO_INITDB_ROOT_PASSWORD: Your_Super_Secret_Password_For_MongoDB_Root_User_Account_123_456_789
     volumes:
       - ./db:/data/db # Replace with your volume mapping if needed
       - ./backup:/backup # Replace with your volume mapping if needed
